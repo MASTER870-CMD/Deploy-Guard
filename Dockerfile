@@ -31,5 +31,5 @@ USER appuser
 
 # Command to run the app with Gunicorn, binding to 0.0.0.0:5000
 # Using 4 workers (adjust as needed) and 2 threads per worker
-CMD ["gunicorn", "app.main:create_app()", "-b", "0.0.0.0:5000", "-w", "4", "--threads", "2"]
+CMD ["sh", "-c", "gunicorn 'app.main:create_app()' --bind 0.0.0.0:${PORT:-5000} --workers 2 --threads 2"]
 
