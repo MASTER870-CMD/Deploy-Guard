@@ -1,0 +1,15 @@
+# Exclude virtual environment
+venv/
+# Exclude git directory
+.git/
+# Exclude test files
+tests/
+# Exclude Python cache files
+__pycache__/
+*.pyc
+# Exclude OS files
+.DS_Store
+# Exclude secrets and env files
+.env
+*.secret
+
