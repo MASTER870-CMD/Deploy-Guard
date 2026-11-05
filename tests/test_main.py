@@ -1,6 +1,7 @@
 """Tests for DeployGuard Flask app."""
 
 import json
+
 from app.main import create_app
 
 

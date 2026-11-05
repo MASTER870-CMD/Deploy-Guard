@@ -1,7 +1,7 @@
 """Main Flask application for DeployGuard."""
 
 from flask import Flask, jsonify, request
-from prometheus_client import Counter, generate_latest, CONTENT_TYPE_LATEST
+from prometheus_client import CONTENT_TYPE_LATEST, Counter, generate_latest
 
 # Metrics
 REQUEST_COUNT = Counter('request_count', 'Total HTTP requests', ['method', 'endpoint'])
@@ -33,6 +33,5 @@ def create_app():
 
 if __name__ == '__main__':
     # Run with gunicorn in production
-    from werkzeug.middleware.dispatcher import DispatcherMiddleware
     app = create_app()
     app.run(host='0.0.0.0', port=5000)
